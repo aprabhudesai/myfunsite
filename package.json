@@ -1,0 +1,46 @@
+{
+  "name": "myfunsite",
+  "version": "1.0.0",
+  "author": "Abhishek Prabhudesai",
+  "description": "This app is just to build fun stuff",
+  "scripts": {
+    "start": "./bin/start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "contributors": [
+    "aprabhudesai"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "bluebird": "^3.3.1",
+    "body-parser": "^1.15.2",
+    "bunyan": "^1.7.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "joi": "^6.7.1",
+    "knex": "~0.10.0",
+    "lodash": "^4.5.1",
+    "moment": "^2.11.2",
+    "mysql": "^2.10.2",
+    "node-uuid": "^1.4.7",
+    "uuid": "^2.0.1",
+    "wreck": "^6.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2",
+    "colors": "^1.1.2",
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-react": "^5.2.2"
+  }
+}
