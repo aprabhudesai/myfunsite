@@ -1,0 +1,10 @@
+# Logs
+log
+logs
+*.log
+
+# Dependency directory
+node_modules
+
+# Compiled
+public/app.js
