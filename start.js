@@ -4,6 +4,7 @@ const app         = express();
 const routes      = require('./src/routes');
 
 app.use(bodyParser.json());
+//app.use(express.compress());
 app.use('/', routes);
 
 const server = app.listen(process.env.PORT || 9201, function () {
