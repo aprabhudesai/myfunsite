@@ -1,11 +1,19 @@
 import React, { Component }         from 'react';
-import { render }                   from 'react-dom'
+import { render }                   from 'react-dom';
+import Header                       from './components/Header';
+import Footer                       from './components/Footer';
 
 class App extends Component {
   render () {
+    const year = new Date().getFullYear();
+    const footerText = `\u00A9 ${year} All Rights Reserved`;
     return (
-      <div id="funsite-app">
-        Fun Site
+      <div className="app">
+        <Header title="Header Title"/>
+        <div className="box app-content">
+          Fun Site
+        </div>
+        <Footer title={footerText}/>
       </div>
     );
   }
@@ -13,5 +21,5 @@ class App extends Component {
 
 render(
   <App/>,
-  document.getElementById("app")
+  document.getElementById("app-container")
 );
