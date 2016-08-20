@@ -1,19 +1,25 @@
 module.exports = function init(grunt) {
   require('load-grunt-tasks')(grunt);
 
+  grunt.loadNpmTasks('grunt-env');
+  grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-clear');
+
   grunt.initConfig({
     browserify: {
       dist: {
         options: {
-          transform: [['babelify', { presets: ['es2015', 'react'] }]],
-          src: ['src/assets/jsx/App.jsx'],
-          dest: 'public/js/app.js'
-        }
+          transform: [['babelify', { presets: ['es2015', 'react'] }]]
+        },
+        src: ['app/app.jsx'],
+        dest: 'public/js/app.js'
       }
     },
     watch: {
       assets: {
-        files: ['assets/jsx/**/*.{js,jsx}', 'src/*.js', 'src/**/*.js', 'src/**/**/*.js'],
+        files: ['app/*.{js,jsx}','app/**/*.{js,jsx}', 'src/*.js', 'src/**/*.js', 'src/**/**/*.js'],
         tasks: ['browserify'],
         interrupt: true
       }
