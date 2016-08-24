@@ -1,7 +1,6 @@
-import React, { Component }         from 'react';
-import { render }                   from 'react-dom';
-import Header                       from './components/Header';
-import Footer                       from './components/Footer';
+import React, { Component }     from 'react';
+import Header                   from './Header';
+import Footer                   from './Footer';
 
 class App extends Component {
   render () {
@@ -19,7 +18,4 @@ class App extends Component {
   }
 }
 
-render(
-  <App/>,
-  document.getElementById("app-container")
-);
+export default App;
