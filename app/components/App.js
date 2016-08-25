@@ -1,5 +1,5 @@
 import React, { Component }     from 'react';
-import Header                   from './Header';
+import HeaderContainer          from '../containers/Header';
 import Footer                   from './Footer';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     const footerText = `\u00A9 ${year} All Rights Reserved`;
     return (
       <div className="app">
-        <Header title="Header Title"/>
+        <HeaderContainer />
         <div className="box app-content">
           Fun Site
         </div>

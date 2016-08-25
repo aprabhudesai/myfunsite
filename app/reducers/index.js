@@ -1,8 +1,8 @@
 import { combineReducers }    from 'redux';
-import headerReducer          from './headerReducer';
+import header                 from './Header';
 
 const myApp = combineReducers({
-  headerReducer
+  header
 });
 
 export default myApp;
