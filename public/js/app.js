@@ -8,9 +8,7 @@ var counter = 0;
 var getHeaderContent = exports.getHeaderContent = function getHeaderContent() {
   return {
     type: 'GET_HEADER_CONTENT',
-    header: {
-      title: 'title ' + counter++
-    }
+    title: 'title ' + counter++
   };
 };
 
@@ -19,9 +17,7 @@ var getFooterContent = exports.getFooterContent = function getFooterContent() {
   var footerText = '© ' + year + ' All Rights Reserved';
   return {
     type: 'GET_FOOTER_CONTENT',
-    footer: {
-      title: footerText
-    }
+    title: footerText
   };
 };
 
@@ -120,11 +116,17 @@ var Footer = function (_Component) {
     value: function render() {
       var title = this.props.title;
       var getFooterData = this.props.getFooterData;
-      getFooterData();
       return _react2.default.createElement(
         "div",
         { className: "box app-footer" },
-        title
+        title,
+        _react2.default.createElement(
+          "button",
+          { onClick: function onClick() {
+              getFooterData();
+            } },
+          "Get Footer"
+        )
       );
     }
   }]);
@@ -304,28 +306,19 @@ var store = (0, _redux.createStore)(_reducers2.default);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var footer = function footer(state, action) {
-  console.log('Footer', state);
   if (state) {
     switch (action.type) {
       case 'GET_FOOTER_CONTENT':
-        return _extends({}, state, {
-          footer: {
-            title: action.title
-          }
-        });
-        break;
+        return {
+          title: action.title
+        };
       default:
         return state;
     }
   } else {
     return {
-      footer: {
-        title: 'Initial Title'
-      }
+      title: 'Initial Footer Title'
     };
   }
 };
@@ -338,28 +331,19 @@ exports.default = footer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var header = function header(state, action) {
-  console.log('Header', state);
   if (state) {
     switch (action.type) {
-      case 'GET_FOOTER_CONTENT':
-        return _extends({}, state, {
-          header: {
-            title: action.title
-          }
-        });
-        break;
+      case 'GET_HEADER_CONTENT':
+        return {
+          title: action.title
+        };
       default:
         return state;
     }
   } else {
     return {
-      header: {
-        title: 'Initial Title'
-      }
+      title: 'Initial Header Title'
     };
   }
 };
