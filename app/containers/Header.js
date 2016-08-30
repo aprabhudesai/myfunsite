@@ -4,7 +4,7 @@ import { getHeaderContent } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    title: state.header.title || 'initial title'
+    title: state.header.title
   };
 };
 

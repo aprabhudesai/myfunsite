@@ -1,11 +1,11 @@
-const header = (state, action) => {
-  console.log('Header',state);
+const footer = (state, action) => {
+  console.log('Footer', state);
   if (state) {
     switch (action.type) {
       case 'GET_FOOTER_CONTENT':
         return {
           ...state,
-          header: {
+          footer: {
             title: action.title
           }
         };
@@ -15,11 +15,11 @@ const header = (state, action) => {
     }
   } else {
     return {
-      header: {
+      footer: {
         title: 'Initial Title'
       }
     }
   }
-}
+};
 
-export default header;
+export default footer;
