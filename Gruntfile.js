@@ -19,7 +19,7 @@ module.exports = function init(grunt) {
     },
     watch: {
       assets: {
-        files: ['app/*.{js,jsx}','app/**/*.{js,jsx}', 'src/*.js', 'src/**/*.js', 'src/**/**/*.js'],
+        files: ['app/*.{js,jsx}','app/**/*.{js,jsx}'],
         tasks: ['browserify'],
         interrupt: true
       }

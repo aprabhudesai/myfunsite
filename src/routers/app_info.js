@@ -1,7 +1,7 @@
 const express       = require('express');
 const router        = express.Router();
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   console.log('Getting App Info');
   const appInfo = {
     name: 'My Fun Site',

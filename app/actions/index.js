@@ -1,8 +1,14 @@
+import { getHeaderData }       from '../middleware/api';
 let counter = 0;
+
 export const getHeaderContent = () => {
+  getHeaderData()
+  .then((data) => {
+    console.log(data);
+  });
   return {
     type: 'GET_HEADER_CONTENT',
-    title: 'title ' + counter++
+    title: data.header.title
   };
 };
 

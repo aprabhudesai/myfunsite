@@ -5,7 +5,7 @@ const options = {
   root: __dirname + '/../../../public/html'
 };
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   res.type('html');
   res.sendFile('index.html', options);
 });
